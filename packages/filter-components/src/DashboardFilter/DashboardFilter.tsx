@@ -2,15 +2,15 @@
  * Copyright (c) 2023 Google LLC
  * SPDX-License-Identifier: MIT
  */
-import React, { useContext, useEffect } from 'react';
 import { Field, Status, Tooltip } from '@looker/components';
+import React, { useContext, useEffect } from 'react';
 import { Filter } from '../Filter/Filter';
 import { useValidationMessage } from '../Filter/utils';
-import type { UseSuggestableProps } from './use_suggestable';
-import { useSuggestable } from './use_suggestable';
+import { FilterContext } from '../FilterCollection';
 import type { UseExpressionStateProps } from './use_expression_state';
 import { useExpressionState } from './use_expression_state';
-import { FilterContext } from '../FilterCollection';
+import type { UseSuggestableProps } from './use_suggestable';
+import { useSuggestable } from './use_suggestable';
 
 export type DashboardFilterProps = UseExpressionStateProps &
   UseSuggestableProps;
@@ -46,6 +46,8 @@ export const DashboardFilter = ({
     stateProps.expression,
     required
   );
+
+  console.log("Custom filter")
 
   return (
     <Field
