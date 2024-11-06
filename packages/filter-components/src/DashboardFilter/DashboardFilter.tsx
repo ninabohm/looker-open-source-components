@@ -4,7 +4,6 @@
  */
 import { Field, Status, Tooltip } from '@looker/components';
 import React, { useContext, useEffect } from 'react';
-import { Filter } from '../Filter/Filter';
 import { useValidationMessage } from '../Filter/utils';
 import { FilterContext } from '../FilterCollection';
 import type { UseExpressionStateProps } from './use_expression_state';
@@ -47,7 +46,7 @@ export const DashboardFilter = ({
     required
   );
 
-  console.log("Custom filter")
+  console.log("Using custom filter")
 
   return (
     <Field
@@ -62,7 +61,8 @@ export const DashboardFilter = ({
       }
       validationMessage={validationMessage}
     >
-      <Filter
+      <div>test</div>
+      {/* <Filter
         name={name || ''}
         type={type || ''}
         field={field}
@@ -71,7 +71,7 @@ export const DashboardFilter = ({
         {...suggestableProps}
         {...stateProps}
         allowMultipleValues={!!allow_multiple_values}
-      />
+      /> */}
     </Field>
   );
 };
